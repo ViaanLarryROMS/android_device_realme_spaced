@@ -362,6 +362,11 @@
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
+      "Type": "EndHint",
+      "Value": "INTERACTION"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUSchedPeriod",
       "Duration": 0,
       "Value": "100"
