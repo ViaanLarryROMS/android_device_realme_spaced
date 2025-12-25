@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "LauncherOverlaySpaced",
+    theme: "LauncherOverlaySpaced",
+    sdk_version: "current",
+    product_specific: true,
+}
