@@ -61,7 +61,8 @@ function blob_fixup {
     case "$1" in
         vendor/lib*/hw/audio.primary.mt6781.so)
             [ "$2" = "" ] && return 0
-             "${PATCHELF}" --replace-needed "libalsautils.so" "libalsautils-v31.so" "${2}"
+            "${PATCHELF}" --replace-needed "libalsautils.so" "libalsautils-v31.so" "${2}"
+            "${PATCHELF}" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "${2}"
              ;;
         vendor/lib*/libnvram.so|\
         vendor/lib*/libsysenv.so|\
@@ -94,6 +95,7 @@ function blob_fixup {
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             "${PATCHELF}" --replace-needed "libsensorndkbridge.so" "android.hardware.sensors@1.0-convert-shared.so" "${2}"
+            "${PATCHELF}" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "${2}"
             ;;
         vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc)
             [ "$2" = "" ] && return 0
@@ -153,6 +155,10 @@ function blob_fixup {
         vendor/lib64/libmnl.so)
             [ "$2" = "" ] && return 0
             grep -q "libcutils.so" "${2}" || "${PATCHELF}" --add-needed "libcutils.so" "${2}"
+            ;;
+        vendor/lib*/librt_extamp_intf.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "${2}"
             ;;
         vendor/lib64/hw/hwcomposer.mt6781.so)
             [ "$2" = "" ] && return 0
