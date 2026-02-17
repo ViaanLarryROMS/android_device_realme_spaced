@@ -237,15 +237,14 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 # Sensors
 ro.vendor.mtk.sensor.support=yes
 
-# LMK
 ro.lmk.downgrade_pressure=60
-ro.lmk.kill_timeout_ms=200
-ro.lmk.psi_complete_stall_ms=150
+ro.lmk.kill_timeout_ms=350
+ro.lmk.psi_complete_stall_ms=220
 ro.lmk.swap_free_low_percentage=12
-ro.lmk.swap_util_max=90
+ro.lmk.swap_util_max=95
 ro.lmk.thrashing_limit=38
 ro.lmk.thrashing_limit_decay=50
-ro.lmk.filecache_min_kb=131072
+ro.lmk.filecache_min_kb=65536
 ro.lmk.stall_limit_critical=40
 
 # TEE
