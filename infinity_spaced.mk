@@ -17,7 +17,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Include Dolby Atmos
 $(call inherit-product, hardware/dolby/dolby.mk)
 
-PRODUCT_NAME := lineage_spaced
+PRODUCT_NAME := infinity_spaced
 PRODUCT_DEVICE := spaced
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
